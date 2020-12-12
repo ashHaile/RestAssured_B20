@@ -44,7 +44,9 @@ public class JsonPathIntro {
 //         response.prettyPrint();
         // JsonPath is used to navigate through the json payload
         // and extract the the value according to the valid "jsonpath" provided
-        JsonPath jp =  response.jsonPath();
+
+        JsonPath jp =  response.jsonPath(); // response.jsonpath() is a method that help as to find the path
+
         int myId         = jp.getInt("id") ;
         String myName    = jp.getString("name") ;
         String myGender  = jp.getString("gender") ;
@@ -107,7 +109,7 @@ public class JsonPathIntro {
                 .queryParam("nameContains","de")
                 .queryParam("gender","Male").
             when()
-                .get("/spartans/search") // this is where we get the json path
+                .get("/spartans/search") // this is where we get the response object
                 .jsonPath();
 
         System.out.println("first guy name " +
