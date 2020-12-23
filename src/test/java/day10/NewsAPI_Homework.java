@@ -28,7 +28,8 @@ public class NewsAPI_Homework {
                         .log().uri()
                         .baseUri("http://newsapi.org")
                         .basePath("/v2")
-                        .queryParam("apiKey","YourOwnKeyGoesHere")
+                        .header("Authorization","Bearer 03e75cdc200c4f27a77f9b1473bbde8d")
+                        //.queryParam("apiKey","YourOwnKeyGoesHere")
                         .queryParam("country","us").
                 when()
                         .get("/top-headlines")//.prettyPeek()
